@@ -13,8 +13,8 @@ if ('serviceWorker' in navigator) {
 
 // Simple user database (stored in localStorage for persistence)
 const DEMO_USERS = {
-    'user': '123',
-    'admin': 'admin123'
+    'familia': 'Leon2025',
+    'admin': 'Kaszanka'
 };
 
 // Sample meal data - 14 days of recipes
@@ -27,15 +27,15 @@ let mealPlan = [
     },
     {
         day: 2,
-        name: 'Spaghetti Carbonara',
-        description: 'Klasyczny włoski makaron z kremowym sosem, boczkiem i serem parmezańskim. Prosty i pyszny.',
-        image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop'
+        name: 'Grecka klasyczna sałatka',
+        description: 'Klasyczna grecka sałatka z pomidorami, ogórkiem, oliwkami, serem feta i oliwą z oliwek.',
+        image: 'https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg'
     },
     {
         day: 3,
         name: 'Tajskie zielone curry z kurczakiem',
         description: 'Aromatyczne zielone curry z delikatnym kurczakiem, bazylią i mlekiem kokosowym. Podawane z ryżem jaśminowym.',
-        image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e4e31?w=400&h=300&fit=crop'
+        image: 'https://img.freepik.com/free-photo/pork-green-curry-white-bowl-with-spices-black-cement-background_1150-35199.jpg'
     },
     {
         day: 4,
@@ -47,7 +47,7 @@ let mealPlan = [
         day: 5,
         name: 'Warzywa smażone na patelni',
         description: 'Kolorowa mieszanka świeżych warzyw w aromatycznym sosie sojowym. Podawane z brązowym ryżem.',
-        image: 'https://images.unsplash.com/photo-1609501676725-7186f017a4b8?w=400&h=300&fit=crop'
+        image: 'https://images.pexels.com/photos/13376605/pexels-photo-13376605.jpeg'
     },
     {
         day: 6,
@@ -89,7 +89,7 @@ let mealPlan = [
         day: 12,
         name: 'Warzywa smażone na patelni',
         description: 'Kolorowa mieszanka świeżych warzyw w aromatycznym sosie sojowym. Podawane z brązowym ryżem.',
-        image: 'https://images.unsplash.com/photo-1609501676725-7186f017a4b8?w=400&h=300&fit=crop'
+        image: 'https://images.pexels.com/photos/13376605/pexels-photo-13376605.jpeg'
     },
     {
         day: 13,
@@ -220,6 +220,12 @@ function updateTodaysMeal() {
     todayMealName.textContent = todayMeal.name;
     todayMealDesc.textContent = todayMeal.description;
     todayMealImage.src = todayMeal.image;
+    
+    // Update splash background to today's recipe image
+    const splashContent = document.querySelector('.splash-content');
+    if (splashContent) {
+        splashContent.style.backgroundImage = `linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.45) 100%), url('${todayMeal.image}')`;
+    }
 }
 
 // Generate 14-day meal plan cards

@@ -404,6 +404,71 @@ body.splash-active {
     gap: 10px;
 }
 
+/* Dashboard Container */
+.dashboard-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    margin-bottom: 25px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.navbar h1 {
+    font-size: 22px;
+}
+
+.navbar .btn-secondary,
+.navbar .btn-logout {
+    width: 120px;
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.navbar .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+.navbar .btn-logout {
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+}
+
+.navbar .btn-logout:hover {
+    background: #c0392b;
+}
+
+.content {
+    padding: 20px 0;
+}
+
 /* Meal Plan Grid */
 .meal-plan-grid {
     display: grid;
